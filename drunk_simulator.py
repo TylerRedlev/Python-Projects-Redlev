@@ -40,3 +40,98 @@
 
     You don't have to stick to my code, feel free to improve it :)
 """
+
+"""
+|--------------------------------------------------------------------------
+| GREETING AND GLOBAL VARIABLES
+|--------------------------------------------------------------------------
+"""
+
+from random import randint
+#   Imported random library of Python
+
+#   Defining the global variables
+
+greeting = "*-------------------*\n  WELCOME TO DRUNK SIMULATOR 1.0\n*-------------------*"
+
+print(greeting)
+print("Please enter a size for the distance between the bar and your home.\n")
+
+size_message = "Please use an INTEGER value BIGGER THAN 0 for the size:"
+home = "home"
+pub = "pub"
+
+"""
+|--------------------------------------------------------------------------
+| LOOP FOR SIZE INPUT
+|--------------------------------------------------------------------------
+"""
+while True:
+    size = input(size_message)
+
+    try:
+        val=int(size)
+        print(val)
+        if (val <=0):
+            print("The value you entered is less than or equal to zero\n")
+        else:
+            print("Your distance between your bar and home is {} steps.".format(val))
+            break;
+    except:
+        print("The value you entered is not an integer \n")
+
+"""
+|--------------------------------------------------------------------------
+| LOOP FOR STEPS INPUT
+|--------------------------------------------------------------------------
+"""
+
+
+
+"""
+|--------------------------------------------------------------------------
+| FUNCTION DEFINITION
+|--------------------------------------------------------------------------
+"""
+def drunkman_simulator(size, steps):
+
+        i = 1
+        point = int(size / 2)
+
+        """
+        |--------------------------------------------------------------------------
+        | THE LOOP
+        |--------------------------------------------------------------------------
+        """
+
+        while i < steps:
+            home_distance = "." * int(point)
+            pub_distance = "." * int((size - point))
+            moment = [home, home_distance, "*", pub_distance, pub]
+            step_side = randint(0, 100)
+
+            if point == 0:
+                print("".join(moment))
+                print("You've reached home")
+                return
+
+            elif point == size:
+                print("".join(moment))
+                print("You've reached the pub..")
+                return
+
+            if step_side < 50:
+                point = point - 1
+                print("".join(moment))
+
+            elif step_side >= 50:
+                point = point + 1
+                print("".join(moment))
+
+            i += 1
+            pass
+
+
+drunkman_simulator(10, 100)
+
+
