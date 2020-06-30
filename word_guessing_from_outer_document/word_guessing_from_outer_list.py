@@ -39,3 +39,20 @@ content = [lines.strip() for lines in content]
 #------------------------------------------------------------------------------------------
 
 
+
+#WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
+#------------------------------------------------------------------------------------------
+
+chosen = random.choice(content)
+
+#WE CONVERTED THE CHOSEN STRING ELEMENT INTO A LIST
+
+chosenList = list(chosen)
+
+#WE WRITE THE ACTIVE STATUS OF THE NAME TO BE GUESSED AS ************
+
+activeStatus = list(("*" * len(chosen)))
+
+print("The word contains {} letters.".format(len(chosen)))
+
+
