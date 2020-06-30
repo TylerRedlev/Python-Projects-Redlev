@@ -49,12 +49,6 @@ chosen = random.choice(content)
 
 chosenList = list(chosen)
 
-#WE WRITE THE ACTIVE STATUS OF THE NAME TO BE GUESSED AS ************
-
-activeStatus = list(("*" * len(chosen)))
-
-print("The word contains {} letters.".format(len(chosen)))
-
 
 
 #WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
