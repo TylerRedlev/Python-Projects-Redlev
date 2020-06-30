@@ -56,3 +56,50 @@ activeStatus = list(("*" * len(chosen)))
 print("The word contains {} letters.".format(len(chosen)))
 
 
+
+#WE CHOSE A RANDOM ELEMENT OF THE LIST AND ASSIGNED THAT ELEMENT INTO THE VARIABLE "CHOSEN"
+#------------------------------------------------------------------------------------------
+
+chosen = random.choice(content)
+
+#WE CONVERTED THE CHOSEN STRING ELEMENT INTO A LIST
+
+chosenList = list(chosen)
+
+#WE WRITE THE ACTIVE STATUS OF THE NAME TO BE GUESSED AS ************
+
+activeStatus = list(("*" * len(chosen)))
+
+print("The word contains {} letters.".format(len(chosen)))
+
+
+
+#INPUT A CHARACTER
+
+def guess_input():
+
+    global guess
+    guess = input("Please enter one letter or a {}-letter word:".format(len(chosen)))
+    guess = guess.upper()
+    print(guess.upper())
+
+
+#WRITING THE ITERATION FUNCTIONALITY OF THE SELECTED LIST ITEM FOR INPUTTED LETTER
+#------------------------------------------------------------------------------------------
+
+def after_guess_func():
+    letter_count = int(chosenList.count(guess))
+    if letter_count > 1:
+        print("Yes! The word contains the {} '{}'s.".format(letter_count, guess))
+    elif letter_count == 1:
+        print("Yes! The word contains the letter {}".format(guess))
+    else:
+        print("Sorry. There are no letters '{}' in this word.".format(guess))
+
+
+def guess_iteration():
+    for i in range(len(chosenList)):
+        if chosenList[i] == guess:
+            activeStatus[i] = chosenList[i]
+
+    print(''.join(activeStatus))
