@@ -91,6 +91,8 @@ def after_guess_func():
         print("Sorry. There are no letters '{}' in this word.".format(guess))
 
 
+#UPDATING THE ACTIVE STATUS OF THE CHOSEN WORD AFTER A LETTER IS GUESSED
+
 def guess_iteration():
     for i in range(len(chosenList)):
         if chosenList[i] == guess:
@@ -100,6 +102,8 @@ def guess_iteration():
 
 
 
+
+#THE MAIN LOOP OF THE PROGRAM
 
 
 counter = 0
@@ -121,3 +125,9 @@ while True:
         final_guess = (''.join(activeStatus))
         print("Yes! The word is {}. You guessed in {} times.".format(final_guess, counter))
         break
+
+        """
+        --------------------------------------------
+                        THE END
+        --------------------------------------------
+        """
