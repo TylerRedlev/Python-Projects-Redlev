@@ -64,7 +64,7 @@ pub = "pub"
 
 """
 |--------------------------------------------------------------------------
-| LOOP FOR SIZE INPUT
+| SIZE INPUT LOOP AND FILTRATION FOR INTEGER VALUES
 |--------------------------------------------------------------------------
 """
 while True:
@@ -77,6 +77,7 @@ while True:
             print("The value you entered is less than or equal to zero\n")
         else:
             print("Your distance between your bar and home is {} steps.".format(value_size))
+            size = value_size
             break
     except:
         print("The value you entered is not an integer \n")
@@ -96,6 +97,7 @@ while True:
             print("The value you entered is less than or equal to zero\n")
         else:
             print("You will step {} steps. Let's see how it goes...".format(value_steps))
+            steps = value_steps
             break;
     except:
         print("The value you entered is not an integer \n")
@@ -145,4 +147,4 @@ def drunkman_simulator(size, steps):
         pass
 
 
-drunkman_simulator(10, 100)
+drunkman_simulator(size, steps)
